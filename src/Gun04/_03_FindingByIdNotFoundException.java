@@ -11,8 +11,15 @@ public class _03_FindingByIdNotFoundException {
         WebDriver driver =new ChromeDriver();
         driver.get("https://form.jotform.com/221934510376353");
 
-        WebElement isimkutusu=driver.findElement(By.id("hatalilocator"));
-        //NoSuchElementException: bu hatayı verir.
+        try {
+            WebElement isimkutusu=driver.findElement(By.id("hatalilocator"));
+            //NoSuchElementException: bu hatayı verir.
+        }
+        catch (Exception ex){
+            System.out.println("web element bulunamadı "+ ex.getMessage());
+        }
+
+
 
 
 
