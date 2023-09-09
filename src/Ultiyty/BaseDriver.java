@@ -9,6 +9,7 @@ import java.time.Duration;
 public class BaseDriver {
 
     public static WebDriver driver;
+    public static WebDriverWait wait;
 
     static{ //sadece en başta çalışan kodlar için bu sistem kullanılabilir.
         driver=new ChromeDriver();
@@ -16,6 +17,7 @@ public class BaseDriver {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));//20 saniye açılması süresi veriri
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
     public static void BekleveKapat(){
